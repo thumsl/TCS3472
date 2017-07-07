@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "i2c.h"
+#include "../i2c/i2c.h"
 #include "tcs3472.h"
 
 int main() {
-	i2c bus = i2cOpen("/dev/i2c-1");
+	i2c bus = i2c_open("/dev/i2c-1");
 
 	if (bus == NULL) {
 		fprintf(stderr, "Failed to open i2c bus.\n");
@@ -21,7 +21,7 @@ int main() {
 	printf("RED:\t %d\nGREEN:\t %d\nBLUE:\t %d\nALPHA:\t %d\n\n", currentColor.red, currentColor.green, currentColor.blue, currentColor.clear);
 
 	TCS3472_powerOff(bus);
-	i2cClose(bus);
+	i2c_close(bus);
 
 	return 0;
 }

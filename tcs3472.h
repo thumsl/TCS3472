@@ -24,6 +24,8 @@
 #define TCS3472_ATIME_154MS	0xC0
 #define TCS3472_ATIME_700MS	0x00
 
+void delay(int ms);
+
 typedef struct {
 	short red;
 	short green;
