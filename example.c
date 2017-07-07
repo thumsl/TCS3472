@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../I2C/i2c.h"
-#include "sensor.h"
+#include "i2c.h"
+#include "tcs3472.h"
 
 int main() {
 	i2c bus = i2cOpen("/dev/i2c-1");
